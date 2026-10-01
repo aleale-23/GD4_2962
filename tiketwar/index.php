@@ -22,7 +22,7 @@
     ?>
 
     <p>Konser: <?php echo $namaKonser; ?></p>
-    <p>Harga Tiket: Rp <?php echo $hargaTiket; ?></p>
+    <p>Harga Tiket: Rp <?php echo number_format($hargaTiket, 0, ",", "."); ?></p>
     <p>Sisa Tiket: <?php echo $sisaTiker; ?></p>
     <p>Kategori Tiket: <?php echo $kategoriTiket; ?></p>
 
@@ -104,7 +104,7 @@
 
         <div style="border: 1px solid #ccc; padding: 12px; margin-bottom: 8px;">
             <h3><?php echo $konser["nama"]; ?></h3>
-            <p>Harga: Rp<?php echo $konser["harga"]; ?></p>
+            <p>Harga: Rp<?php echo number_format($konser["harga"], 0, ",", "."); ?></p>
             <p>Tanggal: <?php echo $konser["tanggal"]; ?></p>
             <p>Kategori: <?php echo $konser["kategori"]; ?></p>
         </div>
