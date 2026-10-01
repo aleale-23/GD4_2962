@@ -30,5 +30,37 @@
     $namaArtis = "NCT Dream";
     echo "KOnser " . $namaArtis;
     ?>
+
+    <?php
+    $namaKonser = "Dewa 19 - The Greatest Hits Tour";
+    echo "Konser " . $namaKonser;
+    ?>
+
+    <?php
+    $daftarKonser = [
+        [
+            "nama" => "Coldplay - Music of the Spheres Tour",
+            "harga" => 1500000,
+            "tanggal" => "2026-03-15",
+            "kategori" => "Festival"
+        ],
+        [
+            "nama" => "NCT Dream - The Dream Show",
+            "harga" => 1000000,
+            "tanggal" => "2026-04-20",
+            "kategori" => "K-Pop"
+        ],
+        [
+            "nama" => "Dewa 19 - The Greatest Hits Tour",
+            "harga" => 2000000,
+            "tanggal" => "2026-05-10",
+            "kategori" => "Rock"
+        ]
+    ];
+    ?>
+
+    <p>Konser terdekat: <?php echo $daftarKonser[0]['nama']; ?></p>
+    <p>Tanggal: <?php echo $daftarKonser[0]['tanggal']; ?></p>
+
 </body>
 </html>
