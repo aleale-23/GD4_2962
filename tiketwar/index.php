@@ -62,5 +62,41 @@
     <p>Konser terdekat: <?php echo $daftarKonser[0]['nama']; ?></p>
     <p>Tanggal: <?php echo $daftarKonser[0]['tanggal']; ?></p>
 
+    <?php
+    $tiket = ["nama" => "VIP", "harga" => 500000];
+    echo $tiket["harga"];
+    ?>
+
+    <?php
+    $hargaAsli = $daftarKonser[0]["harga"];
+    $persenDiskon = 20;
+    $hargaSetelahDiskon = $hargaAsli - ($hargaAsli * $persenDiskon / 100);
+    $tiketMasihAda = $daftarKonser[0]["harga"] > 0;
+    ?>
+    
+    <p>Harga asli: Rp<?php echo $hargaAsli; ?></p>
+    <p>Setelah diskon <?php echo $persenDiskon; ?>%: Rp<?php echo $hargaSetelahDiskon; ?></p>
+
+    <?php 
+    $sisaTiket = $daftarKonser[0]["harga"] > 0 ? 15 : 0; //contoh
+    if($sisaTiket > 10){
+        $statusTiket = "Masih Banyak";
+    }else if($sisaTiket > 0){
+        $statusTiket = "Sisa Dikit, Buruan!";
+    }else {
+        $statusTiket = "Sold Out";
+    }
+
+    $kategori = $daftarKonser[0]["kategori"];
+    switch($kategori){
+        case "Festival": $badge = "Festival Pass"; break;
+        case "VIP": $badge = "VIP Access"; break;
+        case "Regular": $badge = "Regular"; break;
+        default: $badge = "kategori tidak dikenali";
+    }
+    ?>
+
+    <p>Status: <?php echo $statusTiket; ?></p>
+    <p>Kategori: <?php echo $badge; ?></p>
 </body>
 </html>
