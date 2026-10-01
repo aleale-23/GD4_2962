@@ -59,8 +59,7 @@
     ];
     ?>
 
-    <p>Konser terdekat: <?php echo $daftarKonser[0]['nama']; ?></p>
-    <p>Tanggal: <?php echo $daftarKonser[0]['tanggal']; ?></p>
+
 
     <?php
     $tiket = ["nama" => "VIP", "harga" => 500000];
@@ -98,5 +97,17 @@
 
     <p>Status: <?php echo $statusTiket; ?></p>
     <p>Kategori: <?php echo $badge; ?></p>
+
+    <h2>Daftar Konser War Tiket Minggu Ini</h2>
+
+    <?php foreach ($daftarKonser as $konser) {?>
+
+        <div style="border: 1px solid #ccc; padding: 12px; margin-bottom: 8px;">
+            <h3><?php echo $konser["nama"]; ?></h3>
+            <p>Harga: Rp<?php echo $konser["harga"]; ?></p>
+            <p>Tanggal: <?php echo $konser["tanggal"]; ?></p>
+            <p>Kategori: <?php echo $konser["kategori"]; ?></p>
+        </div>
+    <?php } ?>
 </body>
 </html>
