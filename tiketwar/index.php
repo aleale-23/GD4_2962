@@ -109,5 +109,13 @@
             <p>Kategori: <?php echo $konser["kategori"]; ?></p>
         </div>
     <?php } ?>
+
+    <?php
+    $sisaTiket = 5;
+
+    while($sisaTiket > 0){
+        echo "Tiket masih tersedia: $sisaTiket <br>";
+        $sisaTiket--;
+    } ?>
 </body>
 </html>
